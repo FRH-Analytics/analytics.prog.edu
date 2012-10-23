@@ -5,7 +5,10 @@ import graphic.AlgumPlot;
 import graphic.ScatterPlot;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+import math.RegressaoSimples;
 
 import org.gicentre.utils.stat.XYChart;
 
@@ -14,14 +17,14 @@ import processing.core.PVector;
 
 public class UC2 extends PApplet {
 	
-//	private List<ScatterPlot> scatterPlot;
-	private List<AlgumPlot> algumPlot;
+	private List<ScatterPlot> scatterPlot;
 	private Menu menu;
 	
 	private List<List<Float>> dadosNotas;
 	private List<List<Float>> dadosExercicios;
-	private List<List<Integer>> qtd;
-	private List<List<Float>> confianca;
+	
+	private PVector ponto0;
+	private PVector pontoN;
 	
 	private String[][] loadCSV(String filename){
 		String lines[] = loadStrings(filename);
@@ -62,16 +65,6 @@ public class UC2 extends PApplet {
 		dadosExercicios.add(new ArrayList<Float>());
 		dadosExercicios.add(new ArrayList<Float>());
 		
-		qtd = new ArrayList<List<Integer>>();
-		qtd.add(new ArrayList<Integer>());
-		qtd.add(new ArrayList<Integer>());
-		qtd.add(new ArrayList<Integer>());
-		
-		confianca = new ArrayList<List<Float>>();
-		confianca.add(new ArrayList<Float>());
-		confianca.add(new ArrayList<Float>());
-		confianca.add(new ArrayList<Float>());
-		
 		String lines[][] = loadCSV("Exercicios.csv");
 		
 		for (int i = 1; i < lines.length; i++) {
@@ -88,12 +81,6 @@ public class UC2 extends PApplet {
 			dadosExercicios.get(0).add(tmp[3]);
 			dadosExercicios.get(1).add(tmp[4]);
 			dadosExercicios.get(2).add(tmp[5]);
-			qtd.get(0).add((int) tmp[6]);
-			qtd.get(1).add((int) tmp[7]);
-			qtd.get(2).add((int) tmp[8]);
-			confianca.get(0).add(tmp[9]);
-			confianca.get(1).add(tmp[10]);
-			confianca.get(2).add(tmp[11]);
 		}
 	}
 	
@@ -136,32 +123,17 @@ public class UC2 extends PApplet {
 		return tmp;
 	}
 	
-	private AlgumPlot loadAlgumPlot(List<Float> qtdQuestoes, List<Float> notas, List<Integer> qtds) {
-		AlgumPlot plot = new AlgumPlot(this, 100, 10, 10);
-		plot.setData(toFloat(qtdQuestoes), toFloat(notas), toInt(qtds));
-		plot.eixoX = "Nota na Prova";
-		plot.eixoY = "Quantidade de Questões Resolvidas do Exercício";
-		plot.eixoZ = "Quantidade de Alunos";
-		plot.eixoW = "Valor de Confiança";
-		plot.titulo = "Relação entre a quantidade dos exercicios resolvidos com a nota na prova";
-		
-		return plot;
-	}
-	
 	private void initAll() {
 		loadData();
 		
-//		scatterPlot = new ArrayList<ScatterPlot>();
-//		scatterPlot.add(loadScatterPlot(dadosNotas.get(0), dadosExercicios.get(0)));
-//		scatterPlot.add(loadScatterPlot(dadosNotas.get(1), dadosExercicios.get(1)));
-//		scatterPlot.add(loadScatterPlot(dadosNotas.get(2), dadosExercicios.get(2)));
+		scatterPlot = new ArrayList<ScatterPlot>();
+		scatterPlot.add(loadScatterPlot(dadosNotas.get(0), dadosExercicios.get(0)));
+		scatterPlot.add(loadScatterPlot(dadosNotas.get(1), dadosExercicios.get(1)));
+		scatterPlot.add(loadScatterPlot(dadosNotas.get(2), dadosExercicios.get(2)));
 		
-		algumPlot = new ArrayList<AlgumPlot>();
-		algumPlot.add(loadAlgumPlot(dadosExercicios.get(0), dadosNotas.get(0), qtd.get(0)));
-		algumPlot.add(loadAlgumPlot(dadosExercicios.get(1), dadosNotas.get(1), qtd.get(1)));
-		algumPlot.add(loadAlgumPlot(dadosExercicios.get(2), dadosNotas.get(2), qtd.get(2)));
+		menu = new Menu(new String[] {"Prova 1", "Prova 2", "Prova 3"}, 600, 10, 150, 30, this);
 		
-		menu = new Menu(new String[] {"Prova 1", "Prova 2", "Prova 3"}, 10, algumPlot.get(0).high() + 10, 150, 30, this);
+		calculaReta();
 	}
 	
 	@Override
@@ -172,23 +144,82 @@ public class UC2 extends PApplet {
 		initAll();
 	}
 	
+	private float[] toFloatArray(List<Float> list) {
+		float[] array = new float[list.size()];
+		
+		for (int i = 0; i < list.size(); i++)
+			array[i] = list.get(i);
+		
+		return array;
+	}
+	
+	private float maxNumber(float[] array) {
+		float max = array[0];
+		
+		for (int i = 0; i < array.length; i++)
+			if (array[i] >= max)
+				max = array[i];
+		
+		return max;
+	}
+	
+	private void calculaReta() {
+//		float[] pontosX = toFloatArray(dadosExercicios.get(menu.selected));
+//		float[] pontosY = toFloatArray(dadosNotas.get(menu.selected));
+//		float[] pontos = RegressaoSimples.getLine(pontosX, pontosY, maxNumber(pontosX), maxNumber(pontosY));
+//		
+//		float y0 = pontos[0];
+//		float x0 = pontos[1];
+//		float yMax = pontos[2];
+//		float xMax = pontos[3];
+//		
+//		PVector pontoScreen0 = new PVector(x0, y0);
+//		PVector pontoScreenN = new PVector(xMax, yMax);
+//		
+//		System.out.println("FOI?");
+//		System.out.println(scatterPlot.get(menu.selected).getScatterPlot());
+//		System.out.println(maxNumber(pontosX));
+//		System.out.println(maxNumber(pontosY));
+//		
+//		ponto0 = scatterPlot.get(menu.selected).getScatterPlot().getDataToScreen(pontoScreen0);
+//		pontoN = scatterPlot.get(menu.selected).getScatterPlot().getDataToScreen(pontoScreenN);
+	}
+	
 	@Override
 	public void draw() {
 		background(255);
 		textSize(12);
-		text("UC 2", 300, 20);
-//		scatterPlot.get(menu.selected).getScatterPlot().draw(10, 40, 500, 500);
-		algumPlot.get(menu.selected).draw(10, 40, 500, 500);
+		scatterPlot.get(menu.selected).getScatterPlot().draw(10, 40, 500, 500);
+		
 		textSize(16);
 		menu.draw();
-		hover();
-		int i = algumPlot.get(menu.selected).getSquareIndex(new PVector(mouseX, mouseY));
-		if (i > -1)
-			algumPlot.get(menu.selected).hover(confianca.get(menu.selected).get(i));
+		
+		float[] pontosX = toFloatArray(dadosExercicios.get(menu.selected));
+		float[] pontosY = toFloatArray(dadosNotas.get(menu.selected));
+		float[] pontos = RegressaoSimples.getLine(pontosX, pontosY, maxNumber(pontosX), maxNumber(pontosY));
+		
+		float y0 = pontos[0];
+		float x0 = pontos[1];
+		float yMax = pontos[2];
+		float xMax = pontos[3];
+		
+		PVector pontoScreen0 = new PVector(x0, y0);
+		PVector pontoScreenN = new PVector(xMax, yMax);
+		
+		ponto0 = scatterPlot.get(menu.selected).getScatterPlot().getDataToScreen(pontoScreen0);
+		pontoN = scatterPlot.get(menu.selected).getScatterPlot().getDataToScreen(pontoScreenN);
+		
+		stroke(255, 0, 0);
+		line(ponto0.x, ponto0.y, pontoN.x, pontoN.y);
+		stroke(0);
+//		hover();
+//		int i = algumPlot.get(menu.selected).getSquareIndex(new PVector(mouseX, mouseY));
+//		if (i > -1)
+//			algumPlot.get(menu.selected).hover(confianca.get(menu.selected).get(i));
 	}
 	
 	private void hover() {
-		algumPlot.get(menu.selected).hover();
+//		algumPlot.get(menu.selected).hover();
 //		PVector mouse = new PVector(mouseX, mouseY);
 //		PVector chartBar = scatterPlot.get(menu.selected).getScatterPlot().getScreenToData(mouse);
 		
