@@ -1,5 +1,6 @@
 library(plyr)
 require(lattice)
+library(ggplot2)
 
 dados.quantidade.questoes.submetidas = read.csv("../Dados/exercicios-20112.csv")
 print("Colunas da Base:")
@@ -54,13 +55,22 @@ imprime.hist.prova = function(filename, label) {
 #   print(dados.prova[, "Nota"])
   
   
-  hist(dados.prova[, "Nota"], breaks=10, include.lowest=T, labels=T, main=label,
-       xlab="Nota na Prova", ylab="Quantidade Alunos")
+#   hist(dados.prova[, "Nota"], breaks=10, include.lowest=T, labels=T, main=label,
+#        xlab="Nota na Prova", ylab="Quantidade Alunos")
+  ggplot(dados.prova, aes(x=Nota)) + geom_histogram(colour="black", fill="white", binwidth = 0.5) +
+    xlab("Nota na Prova") + ylab("Número de Alunos") +
+    opts(title=label)
 }
 
-png("Histograma - Notas nas Provas.png", width=720, height=720)
-par(mfrow = c(1,3))
-imprime.hist.prova("../Dados/Prova1.csv", "Alunos que Obtiveram tal Nota na Prova 1")
-imprime.hist.prova("../Dados/Prova2.csv", "Alunos que Obtiveram tal Nota na Prova 2")
-imprime.hist.prova("../Dados/Prova3.csv", "Alunos que Obtiveram tal Nota na Prova 3")
+# png("Histograma - Notas nas Provas.png", width=720, height=720)
+# par(mfrow = c(1,3))
+# imprime.hist.prova("../Dados/Prova2.csv", "Alunos que Obtiveram tal Nota na Prova 2")
+png("Histograma - Notas na Prova 1.png", width=250, height=300)
+imprime.hist.prova("../Dados/Prova1.csv", "Notas Obtidas na Prova 1")
+dev.off()
+png("Histograma - Notas na Prova 2.png", width=250, height=300)
+imprime.hist.prova("../Dados/Prova2.csv", "Notas Obtidas na Prova 2")
+dev.off()
+png("Histograma - Notas na Prova 3.png", width=250, height=300)
+imprime.hist.prova("../Dados/Prova3.csv", "Notas Obtidas na Prova 3")
 dev.off()
