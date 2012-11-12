@@ -62,6 +62,10 @@ prova.um = ajeita.provas("../Dados/Prova1.csv", "X86", "X87", "X88", "X89")
 prova.dois = ajeita.provas("../Dados/Prova2.csv", "X165", "X166", "X167", "X168")
 prova.tres = ajeita.provas("../Dados/Prova3.csv", "X191", "X192", "X193", "X194")
 
+prova.um$tipo = 1
+prova.dois$tipo = 2
+prova.tres$tipo = 3
+
 prova.exercicio.um = merge(prova.um, exercicios.um, by="matricula")
 prova.exercicio.um = prova.exercicio.um[, c("questao", "exercicio")]
 prova.exercicio.dois = merge(prova.dois, exercicios.dois, by="matricula")
@@ -69,6 +73,9 @@ prova.exercicio.dois = prova.exercicio.dois[, c("questao", "exercicio")]
 prova.exercicio.tres = merge(prova.tres, exercicios.tres, by="matricula")
 prova.exercicio.tres = prova.exercicio.tres[, c("questao", "exercicio")]
 
-write.csv(prova.exercicio.um, "provaExercicioUm.csv", quote=F, row.names=F)
-write.csv(prova.exercicio.dois, "provaExercicioDois.csv", quote=F, row.names=F)
-write.csv(prova.exercicio.tres, "provaExercicioTres.csv", quote=F, row.names=F)
+# provas.exercicios = rbind(prova.exercicio.um, prova.exercicio.dois)
+# provas.exercicios = rbind(provas.exercicios, prova.exercicio.tres)
+
+write.csv(prova.exercicio.um, "provasExerciciosUm.csv", quote=F, row.names=F, col.names=F)
+write.csv(prova.exercicio.dois, "provasExerciciosDois.csv", quote=F, row.names=F, col.names=F)
+write.csv(prova.exercicio.tres, "provasExerciciosTres.csv", quote=F, row.names=F, col.names=F)
