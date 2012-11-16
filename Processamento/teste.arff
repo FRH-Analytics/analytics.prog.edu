@@ -1,0 +1,41 @@
+@relation teste
+
+@attribute questao.um {1, 0}
+@attribute questao.dois {1, 0}
+@attribute questao.tres {1, 0}
+@attribute questao.quatro {1, 0}
+@attribute exercicio.um {1, 0}
+@attribute exercicio.dois {1, 0}
+@attribute exercicio.tres {1, 0}
+@attribute exercicio.quatro {1, 0}
+@attribute exercicio.cinco {1, 0}
+@attribute exercicio.seis {1, 0}
+@attribute exercicio.sete {1, 0}
+@attribute exercicio.oito {1, 0}
+@attribute exercicio.nove {1, 0}
+@attribute exercicio.dez {1, 0}
+@attribute exercicio.onze {1, 0}
+@attribute exercicio.doze {1, 0}
+@attribute exercicio.treze {1, 0}
+@attribute exercicio.quatorze {1, 0}
+@attribute exercicio.quinze {1, 0}
+@attribute exercicio.dezesseis {1, 0}
+@attribute exercicio.dezessete {1, 0}
+@attribute exercicio.dezoito {1, 0}
+@attribute exercicio.dezenove {1, 0}
+@attribute exercicio.vinte {1, 0}
+
+@data
+
+1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0

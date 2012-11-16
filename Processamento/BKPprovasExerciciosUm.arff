@@ -1,0 +1,83 @@
+@relation provasExercicios
+
+@attribute questao.um {1, 0}
+@attribute questao.dois {1, 0}
+@attribute questao.tres {1, 0}
+@attribute questao.quatro {1, 0}
+@attribute exercicio.1 {1, 0}
+@attribute exercicio.2 {1, 0}
+@attribute exercicio.3 {1, 0}
+@attribute exercicio.4 {1, 0}
+@attribute exercicio.5 {1, 0}
+@attribute exercicio.6 {1, 0}
+@attribute exercicio.7 {1, 0}
+@attribute exercicio.8 {1, 0}
+@attribute exercicio.9 {1, 0}
+@attribute exercicio.10 {1, 0}
+@attribute exercicio.11 {1, 0}
+@attribute exercicio.12 {1, 0}
+@attribute exercicio.13 {1, 0}
+@attribute exercicio.14 {1, 0}
+@attribute exercicio.15 {1, 0}
+@attribute exercicio.16 {1, 0}
+@attribute exercicio.17 {1, 0}
+@attribute exercicio.18 {1, 0}
+@attribute exercicio.19 {1, 0}
+@attribute exercicio.20 {1, 0}
+@attribute exercicio.21 {1, 0}
+@attribute exercicio.22 {1, 0}
+@attribute exercicio.23 {1, 0}
+@attribute exercicio.24 {1, 0}
+@attribute exercicio.25 {1, 0}
+@attribute exercicio.26 {1, 0}
+@attribute exercicio.27 {1, 0}
+@attribute exercicio.28 {1, 0}
+@attribute exercicio.29 {1, 0}
+@attribute exercicio.30 {1, 0}
+@attribute exercicio.31 {1, 0}
+@attribute exercicio.32 {1, 0}
+@attribute exercicio.33 {1, 0}
+@attribute exercicio.34 {1, 0}
+@attribute exercicio.35 {1, 0}
+@attribute exercicio.36 {1, 0}
+@attribute exercicio.37 {1, 0}
+@attribute exercicio.38 {1, 0}
+@attribute exercicio.39 {1, 0}
+@attribute exercicio.40 {1, 0}
+@attribute exercicio.41 {1, 0}
+@attribute exercicio.42 {1, 0}
+@attribute exercicio.43 {1, 0}
+@attribute exercicio.44 {1, 0}
+@attribute exercicio.45 {1, 0}
+@attribute exercicio.46 {1, 0}
+@attribute exercicio.47 {1, 0}
+@attribute exercicio.48 {1, 0}
+@attribute exercicio.49 {1, 0}
+@attribute exercicio.50 {1, 0}
+@attribute exercicio.51 {1, 0}
+@attribute exercicio.52 {1, 0}
+@attribute exercicio.53 {1, 0}
+@attribute exercicio.54 {1, 0}
+@attribute exercicio.55 {1, 0}
+@attribute exercicio.56 {1, 0}
+@attribute exercicio.57 {1, 0}
+@attribute exercicio.58 {1, 0}
+@attribute exercicio.59 {1, 0}
+@attribute exercicio.60 {1, 0}
+@attribute exercicio.61 {1, 0}
+@attribute exercicio.62 {1, 0}
+@attribute exercicio.63 {1, 0}
+@attribute exercicio.64 {1, 0}
+@attribute exercicio.65 {1, 0}
+@attribute exercicio.66 {1, 0}
+@attribute exercicio.67 {1, 0}
+@attribute exercicio.68 {1, 0}
+@attribute exercicio.69 {1, 0}
+@attribute exercicio.70 {1, 0}
+
+@data
+{     2 1,3 1,4 1                 }
+{ 1 1,2 1,    4 1                 }
+{     2 1,              54 1      }
+{     2 1,    4 1, 25 1           }
+{         3 1,               65 1 }

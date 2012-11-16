@@ -10,12 +10,8 @@ colnames(dados.exercicios.submetidas) = c("matricula", "exercicio")
 dados.exercicios.submetidas = unique(dados.exercicios.submetidas)
 
 exercicios.um = dados.exercicios.submetidas[dados.exercicios.submetidas$exercicio < 86, ]
-print(nrow(exercicios.um))
 exercicios.dois = dados.exercicios.submetidas[dados.exercicios.submetidas$exercicio > 85 & dados.exercicios.submetidas$exercicio < 165, ]
-print(nrow(exercicios.dois))
 exercicios.tres = dados.exercicios.submetidas[dados.exercicios.submetidas$exercicio > 164, ]
-print(nrow(exercicios.tres))
-
 
 ajeitar.nota = function(string) {
   return(as.double(paste(substr(string, 1, 1), ".", substr(string, 3, 3), sep="")))
@@ -72,6 +68,26 @@ prova.exercicio.dois = merge(prova.dois, exercicios.dois, by="matricula")
 prova.exercicio.dois = prova.exercicio.dois[, c("questao", "exercicio")]
 prova.exercicio.tres = merge(prova.tres, exercicios.tres, by="matricula")
 prova.exercicio.tres = prova.exercicio.tres[, c("questao", "exercicio")]
+
+contabiliza.tuplas.iguais = function(dados) {
+  dados.contabilizados = data.frame(questao=c(), exercicio=c(), qtd=c())
+  
+  for (i in 1:nrow(dados)) {
+    q = dados[i, "questao"]
+    e = dados[i, "exercicio"]
+    
+    if (nrow(dados.contabilizados[dados.contabilizados$questao == q & dados.contabilizados$exercicio == e, ]) == 0)
+      dados.contabilizados = rbind(dados.contabilizados, data.frame(questao=c(q), exercicio=c(e), qtd=c(0)))
+    
+    dados.contabilizados[dados.contabilizados$questao == q & dados.contabilizados$exercicio == e, "qtd"] = dados.contabilizados[dados.contabilizados$questao == q & dados.contabilizados$exercicio == e, "qtd"] + 1
+  }
+  
+  return(dados.contabilizados)
+}
+
+write.csv(contabiliza.tuplas.iguais(prova.exercicio.um), "UC1-Prova1.csv", quote=F, row.names=F, col.names=F)
+write.csv(contabiliza.tuplas.iguais(prova.exercicio.dois), "UC1-Prova2.csv", quote=F, row.names=F, col.names=F)
+write.csv(contabiliza.tuplas.iguais(prova.exercicio.tres), "UC1-Prova3.csv", quote=F, row.names=F, col.names=F)
 
 # provas.exercicios = rbind(prova.exercicio.um, prova.exercicio.dois)
 # provas.exercicios = rbind(provas.exercicios, prova.exercicio.tres)
