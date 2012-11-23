@@ -1,0 +1,11 @@
+package gui;
+
+public class Column {
+	
+	private float[] valoresDasQuestoes;
+	
+	
+	public Column(int qtdQuestoes) {
+		valoresDasQuestoes = new float[qtdQuestoes];
+	}
+}

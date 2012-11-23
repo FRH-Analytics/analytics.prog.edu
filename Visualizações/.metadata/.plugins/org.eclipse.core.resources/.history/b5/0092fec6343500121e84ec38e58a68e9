@@ -1,0 +1,20 @@
+package gui;
+
+public class Column {
+	
+	private float[] valoresDasQuestoes;
+	
+	
+	public Column(int qtdQuestoes) {
+		valoresDasQuestoes = new float[qtdQuestoes];
+	}
+	
+	public int columnColor() {
+		float color = 0;
+		
+		for (float probabilidade : valoresDasQuestoes)
+			color += probabilidade;
+		
+		return (int) color;
+	}
+}

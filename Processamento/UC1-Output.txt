@@ -1,0 +1,1505 @@
+=== Run information ===
+
+Scheme:weka.classifiers.bayes.NaiveBayesSimple 
+Relation:     questoes.exercicios.um.ajeitado
+Instances:    154
+Attributes:   86
+              exercicio1
+              exercicio2
+              exercicio3
+              exercicio4
+              exercicio5
+              exercicio6
+              exercicio7
+              exercicio8
+              exercicio9
+              exercicio10
+              exercicio11
+              exercicio12
+              exercicio13
+              exercicio14
+              exercicio15
+              exercicio16
+              exercicio17
+              exercicio18
+              exercicio19
+              exercicio20
+              exercicio21
+              exercicio22
+              exercicio23
+              exercicio24
+              exercicio25
+              exercicio26
+              exercicio27
+              exercicio28
+              exercicio29
+              exercicio30
+              exercicio31
+              exercicio32
+              exercicio33
+              exercicio34
+              exercicio35
+              exercicio36
+              exercicio37
+              exercicio38
+              exercicio39
+              exercicio40
+              exercicio41
+              exercicio42
+              exercicio43
+              exercicio44
+              exercicio45
+              exercicio46
+              exercicio47
+              exercicio48
+              exercicio49
+              exercicio50
+              exercicio51
+              exercicio52
+              exercicio53
+              exercicio54
+              exercicio55
+              exercicio56
+              exercicio57
+              exercicio58
+              exercicio59
+              exercicio60
+              exercicio61
+              exercicio62
+              exercicio63
+              exercicio64
+              exercicio65
+              exercicio66
+              exercicio67
+              exercicio68
+              exercicio69
+              exercicio70
+              exercicio71
+              exercicio72
+              exercicio73
+              exercicio74
+              exercicio75
+              exercicio76
+              exercicio77
+              exercicio78
+              exercicio79
+              exercicio80
+              exercicio81
+              exercicio82
+              exercicio83
+              exercicio84
+              exercicio85
+              questao
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Naive Bayes (simple)
+
+Class questao1: P(C) = 0.12025316
+
+Attribute exercicio1
+0	1	
+0.05      	0.95      	
+
+Attribute exercicio2
+0	1	
+0.05      	0.95      	
+
+Attribute exercicio3
+0	1	
+0.05      	0.95      	
+
+Attribute exercicio4
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio5
+0	1	
+0.15      	0.85      	
+
+Attribute exercicio6
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio7
+0	1	
+0.05      	0.95      	
+
+Attribute exercicio8
+0	1	
+0.05      	0.95      	
+
+Attribute exercicio9
+0	1	
+0.05      	0.95      	
+
+Attribute exercicio10
+0	1	
+0.05      	0.95      	
+
+Attribute exercicio11
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio12
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio13
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio14
+0	1	
+0.15      	0.85      	
+
+Attribute exercicio15
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio16
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio17
+1	
+1         	
+
+Attribute exercicio18
+1	
+1         	
+
+Attribute exercicio19
+0	1	
+0.05      	0.95      	
+
+Attribute exercicio20
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio21
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio22
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio23
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio24
+0	1	
+0.15      	0.85      	
+
+Attribute exercicio25
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio26
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio27
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio28
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio29
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio30
+0	
+1         	
+
+Attribute exercicio31
+0	1	
+0.15      	0.85      	
+
+Attribute exercicio32
+0	1	
+0.15      	0.85      	
+
+Attribute exercicio33
+0	1	
+0.15      	0.85      	
+
+Attribute exercicio34
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio35
+0	1	
+0.2       	0.8       	
+
+Attribute exercicio36
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio37
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio38
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio39
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio40
+0	1	
+0.15      	0.85      	
+
+Attribute exercicio41
+0	1	
+0.3       	0.7       	
+
+Attribute exercicio42
+0	1	
+0.25      	0.75      	
+
+Attribute exercicio43
+0	
+1         	
+
+Attribute exercicio44
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio45
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio46
+0	1	
+0.2       	0.8       	
+
+Attribute exercicio47
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio48
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio49
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio50
+0	1	
+0.2       	0.8       	
+
+Attribute exercicio51
+0	1	
+0.15      	0.85      	
+
+Attribute exercicio52
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio53
+0	1	
+0.15      	0.85      	
+
+Attribute exercicio54
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio55
+0	1	
+0.2       	0.8       	
+
+Attribute exercicio56
+0	1	
+0.3       	0.7       	
+
+Attribute exercicio57
+0	1	
+0.15      	0.85      	
+
+Attribute exercicio58
+0	1	
+0.2       	0.8       	
+
+Attribute exercicio59
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio60
+0	1	
+0.2       	0.8       	
+
+Attribute exercicio61
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio62
+0	1	
+0.15      	0.85      	
+
+Attribute exercicio63
+0	1	
+0.15      	0.85      	
+
+Attribute exercicio64
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio65
+0	
+1         	
+
+Attribute exercicio66
+0	1	
+0.05      	0.95      	
+
+Attribute exercicio67
+0	1	
+0.05      	0.95      	
+
+Attribute exercicio68
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio69
+0	1	
+0.15      	0.85      	
+
+Attribute exercicio70
+0	1	
+0.15      	0.85      	
+
+Attribute exercicio71
+0	1	
+0.5       	0.5       	
+
+Attribute exercicio72
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio73
+0	1	
+0.25      	0.75      	
+
+Attribute exercicio74
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio75
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio76
+0	1	
+0.25      	0.75      	
+
+Attribute exercicio77
+0	1	
+0.2       	0.8       	
+
+Attribute exercicio78
+0	1	
+0.1       	0.9       	
+
+Attribute exercicio79
+0	1	
+0.5       	0.5       	
+
+Attribute exercicio80
+0	1	
+0.3       	0.7       	
+
+Attribute exercicio81
+0	1	
+0.2       	0.8       	
+
+Attribute exercicio82
+0	1	
+0.25      	0.75      	
+
+Attribute exercicio83
+0	1	
+0.65      	0.35      	
+
+Attribute exercicio84
+0	1	
+0.65      	0.35      	
+
+Attribute exercicio85
+0	1	
+0.45      	0.55      	
+
+
+
+Class questao2: P(C) = 0.34177215
+
+Attribute exercicio1
+0	1	
+0.12727273	0.87272727	
+
+Attribute exercicio2
+0	1	
+0.05454545	0.94545455	
+
+Attribute exercicio3
+0	1	
+0.03636364	0.96363636	
+
+Attribute exercicio4
+0	1	
+0.05454545	0.94545455	
+
+Attribute exercicio5
+0	1	
+0.2       	0.8       	
+
+Attribute exercicio6
+0	1	
+0.03636364	0.96363636	
+
+Attribute exercicio7
+0	1	
+0.05454545	0.94545455	
+
+Attribute exercicio8
+0	1	
+0.07272727	0.92727273	
+
+Attribute exercicio9
+0	1	
+0.01818182	0.98181818	
+
+Attribute exercicio10
+0	1	
+0.01818182	0.98181818	
+
+Attribute exercicio11
+0	1	
+0.07272727	0.92727273	
+
+Attribute exercicio12
+0	1	
+0.12727273	0.87272727	
+
+Attribute exercicio13
+0	1	
+0.09090909	0.90909091	
+
+Attribute exercicio14
+0	1	
+0.21818182	0.78181818	
+
+Attribute exercicio15
+0	1	
+0.16363636	0.83636364	
+
+Attribute exercicio16
+0	1	
+0.10909091	0.89090909	
+
+Attribute exercicio17
+1	
+1         	
+
+Attribute exercicio18
+1	
+1         	
+
+Attribute exercicio19
+0	1	
+0.05454545	0.94545455	
+
+Attribute exercicio20
+0	1	
+0.03636364	0.96363636	
+
+Attribute exercicio21
+0	1	
+0.07272727	0.92727273	
+
+Attribute exercicio22
+0	1	
+0.05454545	0.94545455	
+
+Attribute exercicio23
+0	1	
+0.03636364	0.96363636	
+
+Attribute exercicio24
+0	1	
+0.07272727	0.92727273	
+
+Attribute exercicio25
+0	1	
+0.12727273	0.87272727	
+
+Attribute exercicio26
+0	1	
+0.03636364	0.96363636	
+
+Attribute exercicio27
+0	1	
+0.18181818	0.81818182	
+
+Attribute exercicio28
+0	1	
+0.09090909	0.90909091	
+
+Attribute exercicio29
+0	1	
+0.07272727	0.92727273	
+
+Attribute exercicio30
+0	
+1         	
+
+Attribute exercicio31
+0	1	
+0.07272727	0.92727273	
+
+Attribute exercicio32
+0	1	
+0.18181818	0.81818182	
+
+Attribute exercicio33
+0	1	
+0.14545455	0.85454545	
+
+Attribute exercicio34
+0	1	
+0.09090909	0.90909091	
+
+Attribute exercicio35
+0	1	
+0.16363636	0.83636364	
+
+Attribute exercicio36
+0	1	
+0.07272727	0.92727273	
+
+Attribute exercicio37
+0	1	
+0.07272727	0.92727273	
+
+Attribute exercicio38
+0	1	
+0.12727273	0.87272727	
+
+Attribute exercicio39
+0	1	
+0.09090909	0.90909091	
+
+Attribute exercicio40
+0	1	
+0.29090909	0.70909091	
+
+Attribute exercicio41
+0	1	
+0.32727273	0.67272727	
+
+Attribute exercicio42
+0	1	
+0.41818182	0.58181818	
+
+Attribute exercicio43
+0	
+1         	
+
+Attribute exercicio44
+0	1	
+0.16363636	0.83636364	
+
+Attribute exercicio45
+0	1	
+0.25454545	0.74545455	
+
+Attribute exercicio46
+0	1	
+0.27272727	0.72727273	
+
+Attribute exercicio47
+0	1	
+0.14545455	0.85454545	
+
+Attribute exercicio48
+0	1	
+0.10909091	0.89090909	
+
+Attribute exercicio49
+0	1	
+0.16363636	0.83636364	
+
+Attribute exercicio50
+0	1	
+0.21818182	0.78181818	
+
+Attribute exercicio51
+0	1	
+0.09090909	0.90909091	
+
+Attribute exercicio52
+0	1	
+0.10909091	0.89090909	
+
+Attribute exercicio53
+0	1	
+0.16363636	0.83636364	
+
+Attribute exercicio54
+0	1	
+0.12727273	0.87272727	
+
+Attribute exercicio55
+0	1	
+0.25454545	0.74545455	
+
+Attribute exercicio56
+0	1	
+0.29090909	0.70909091	
+
+Attribute exercicio57
+0	1	
+0.25454545	0.74545455	
+
+Attribute exercicio58
+0	1	
+0.18181818	0.81818182	
+
+Attribute exercicio59
+0	1	
+0.14545455	0.85454545	
+
+Attribute exercicio60
+0	1	
+0.18181818	0.81818182	
+
+Attribute exercicio61
+0	1	
+0.09090909	0.90909091	
+
+Attribute exercicio62
+0	1	
+0.10909091	0.89090909	
+
+Attribute exercicio63
+0	1	
+0.18181818	0.81818182	
+
+Attribute exercicio64
+0	1	
+0.09090909	0.90909091	
+
+Attribute exercicio65
+0	
+1         	
+
+Attribute exercicio66
+0	1	
+0.10909091	0.89090909	
+
+Attribute exercicio67
+0	1	
+0.14545455	0.85454545	
+
+Attribute exercicio68
+0	1	
+0.14545455	0.85454545	
+
+Attribute exercicio69
+0	1	
+0.09090909	0.90909091	
+
+Attribute exercicio70
+0	1	
+0.07272727	0.92727273	
+
+Attribute exercicio71
+0	1	
+0.65454545	0.34545455	
+
+Attribute exercicio72
+0	1	
+0.12727273	0.87272727	
+
+Attribute exercicio73
+0	1	
+0.34545455	0.65454545	
+
+Attribute exercicio74
+0	1	
+0.12727273	0.87272727	
+
+Attribute exercicio75
+0	1	
+0.18181818	0.81818182	
+
+Attribute exercicio76
+0	1	
+0.21818182	0.78181818	
+
+Attribute exercicio77
+0	1	
+0.23636364	0.76363636	
+
+Attribute exercicio78
+0	1	
+0.25454545	0.74545455	
+
+Attribute exercicio79
+0	1	
+0.74545455	0.25454545	
+
+Attribute exercicio80
+0	1	
+0.4       	0.6       	
+
+Attribute exercicio81
+0	1	
+0.29090909	0.70909091	
+
+Attribute exercicio82
+0	1	
+0.23636364	0.76363636	
+
+Attribute exercicio83
+0	1	
+0.65454545	0.34545455	
+
+Attribute exercicio84
+0	1	
+0.72727273	0.27272727	
+
+Attribute exercicio85
+0	1	
+0.52727273	0.47272727	
+
+
+
+Class questao3: P(C) = 0.38607595
+
+Attribute exercicio1
+0	1	
+0.17741935	0.82258065	
+
+Attribute exercicio2
+0	1	
+0.06451613	0.93548387	
+
+Attribute exercicio3
+0	1	
+0.08064516	0.91935484	
+
+Attribute exercicio4
+0	1	
+0.09677419	0.90322581	
+
+Attribute exercicio5
+0	1	
+0.25806452	0.74193548	
+
+Attribute exercicio6
+0	1	
+0.11290323	0.88709677	
+
+Attribute exercicio7
+0	1	
+0.11290323	0.88709677	
+
+Attribute exercicio8
+0	1	
+0.12903226	0.87096774	
+
+Attribute exercicio9
+0	1	
+0.06451613	0.93548387	
+
+Attribute exercicio10
+0	1	
+0.0483871 	0.9516129 	
+
+Attribute exercicio11
+0	1	
+0.14516129	0.85483871	
+
+Attribute exercicio12
+0	1	
+0.22580645	0.77419355	
+
+Attribute exercicio13
+0	1	
+0.19354839	0.80645161	
+
+Attribute exercicio14
+0	1	
+0.32258065	0.67741935	
+
+Attribute exercicio15
+0	1	
+0.17741935	0.82258065	
+
+Attribute exercicio16
+0	1	
+0.19354839	0.80645161	
+
+Attribute exercicio17
+1	
+1         	
+
+Attribute exercicio18
+1	
+1         	
+
+Attribute exercicio19
+0	1	
+0.06451613	0.93548387	
+
+Attribute exercicio20
+0	1	
+0.03225806	0.96774194	
+
+Attribute exercicio21
+0	1	
+0.08064516	0.91935484	
+
+Attribute exercicio22
+0	1	
+0.09677419	0.90322581	
+
+Attribute exercicio23
+0	1	
+0.06451613	0.93548387	
+
+Attribute exercicio24
+0	1	
+0.11290323	0.88709677	
+
+Attribute exercicio25
+0	1	
+0.19354839	0.80645161	
+
+Attribute exercicio26
+0	1	
+0.08064516	0.91935484	
+
+Attribute exercicio27
+0	1	
+0.25806452	0.74193548	
+
+Attribute exercicio28
+0	1	
+0.14516129	0.85483871	
+
+Attribute exercicio29
+0	1	
+0.11290323	0.88709677	
+
+Attribute exercicio30
+0	
+1         	
+
+Attribute exercicio31
+0	1	
+0.06451613	0.93548387	
+
+Attribute exercicio32
+0	1	
+0.32258065	0.67741935	
+
+Attribute exercicio33
+0	1	
+0.24193548	0.75806452	
+
+Attribute exercicio34
+0	1	
+0.16129032	0.83870968	
+
+Attribute exercicio35
+0	1	
+0.22580645	0.77419355	
+
+Attribute exercicio36
+0	1	
+0.14516129	0.85483871	
+
+Attribute exercicio37
+0	1	
+0.16129032	0.83870968	
+
+Attribute exercicio38
+0	1	
+0.14516129	0.85483871	
+
+Attribute exercicio39
+0	1	
+0.17741935	0.82258065	
+
+Attribute exercicio40
+0	1	
+0.40322581	0.59677419	
+
+Attribute exercicio41
+0	1	
+0.4516129 	0.5483871 	
+
+Attribute exercicio42
+0	1	
+0.53225806	0.46774194	
+
+Attribute exercicio43
+0	
+1         	
+
+Attribute exercicio44
+0	1	
+0.24193548	0.75806452	
+
+Attribute exercicio45
+0	1	
+0.33870968	0.66129032	
+
+Attribute exercicio46
+0	1	
+0.40322581	0.59677419	
+
+Attribute exercicio47
+0	1	
+0.33870968	0.66129032	
+
+Attribute exercicio48
+0	1	
+0.24193548	0.75806452	
+
+Attribute exercicio49
+0	1	
+0.35483871	0.64516129	
+
+Attribute exercicio50
+0	1	
+0.41935484	0.58064516	
+
+Attribute exercicio51
+0	1	
+0.14516129	0.85483871	
+
+Attribute exercicio52
+0	1	
+0.16129032	0.83870968	
+
+Attribute exercicio53
+0	1	
+0.20967742	0.79032258	
+
+Attribute exercicio54
+0	1	
+0.17741935	0.82258065	
+
+Attribute exercicio55
+0	1	
+0.38709677	0.61290323	
+
+Attribute exercicio56
+0	1	
+0.43548387	0.56451613	
+
+Attribute exercicio57
+0	1	
+0.40322581	0.59677419	
+
+Attribute exercicio58
+0	1	
+0.33870968	0.66129032	
+
+Attribute exercicio59
+0	1	
+0.25806452	0.74193548	
+
+Attribute exercicio60
+0	1	
+0.40322581	0.59677419	
+
+Attribute exercicio61
+0	1	
+0.14516129	0.85483871	
+
+Attribute exercicio62
+0	1	
+0.14516129	0.85483871	
+
+Attribute exercicio63
+0	1	
+0.29032258	0.70967742	
+
+Attribute exercicio64
+0	1	
+0.17741935	0.82258065	
+
+Attribute exercicio65
+0	
+1         	
+
+Attribute exercicio66
+0	1	
+0.17741935	0.82258065	
+
+Attribute exercicio67
+0	1	
+0.22580645	0.77419355	
+
+Attribute exercicio68
+0	1	
+0.22580645	0.77419355	
+
+Attribute exercicio69
+0	1	
+0.22580645	0.77419355	
+
+Attribute exercicio70
+0	1	
+0.17741935	0.82258065	
+
+Attribute exercicio71
+0	1	
+0.75806452	0.24193548	
+
+Attribute exercicio72
+0	1	
+0.25806452	0.74193548	
+
+Attribute exercicio73
+0	1	
+0.46774194	0.53225806	
+
+Attribute exercicio74
+0	1	
+0.30645161	0.69354839	
+
+Attribute exercicio75
+0	1	
+0.27419355	0.72580645	
+
+Attribute exercicio76
+0	1	
+0.33870968	0.66129032	
+
+Attribute exercicio77
+0	1	
+0.35483871	0.64516129	
+
+Attribute exercicio78
+0	1	
+0.40322581	0.59677419	
+
+Attribute exercicio79
+0	1	
+0.80645161	0.19354839	
+
+Attribute exercicio80
+0	1	
+0.5       	0.5       	
+
+Attribute exercicio81
+0	1	
+0.33870968	0.66129032	
+
+Attribute exercicio82
+0	1	
+0.30645161	0.69354839	
+
+Attribute exercicio83
+0	1	
+0.75806452	0.24193548	
+
+Attribute exercicio84
+0	1	
+0.82258065	0.17741935	
+
+Attribute exercicio85
+0	1	
+0.59677419	0.40322581	
+
+
+
+Class questao4: P(C) = 0.15189873
+
+Attribute exercicio1
+0	1	
+0.12      	0.88      	
+
+Attribute exercicio2
+0	1	
+0.08      	0.92      	
+
+Attribute exercicio3
+0	1	
+0.08      	0.92      	
+
+Attribute exercicio4
+0	1	
+0.08      	0.92      	
+
+Attribute exercicio5
+0	1	
+0.12      	0.88      	
+
+Attribute exercicio6
+0	1	
+0.08      	0.92      	
+
+Attribute exercicio7
+0	1	
+0.08      	0.92      	
+
+Attribute exercicio8
+0	1	
+0.08      	0.92      	
+
+Attribute exercicio9
+0	1	
+0.04      	0.96      	
+
+Attribute exercicio10
+0	1	
+0.04      	0.96      	
+
+Attribute exercicio11
+0	1	
+0.08      	0.92      	
+
+Attribute exercicio12
+0	1	
+0.12      	0.88      	
+
+Attribute exercicio13
+0	1	
+0.12      	0.88      	
+
+Attribute exercicio14
+0	1	
+0.16      	0.84      	
+
+Attribute exercicio15
+0	1	
+0.12      	0.88      	
+
+Attribute exercicio16
+0	1	
+0.12      	0.88      	
+
+Attribute exercicio17
+1	
+1         	
+
+Attribute exercicio18
+1	
+1         	
+
+Attribute exercicio19
+0	1	
+0.12      	0.88      	
+
+Attribute exercicio20
+0	1	
+0.04      	0.96      	
+
+Attribute exercicio21
+0	1	
+0.12      	0.88      	
+
+Attribute exercicio22
+0	1	
+0.04      	0.96      	
+
+Attribute exercicio23
+0	1	
+0.04      	0.96      	
+
+Attribute exercicio24
+0	1	
+0.08      	0.92      	
+
+Attribute exercicio25
+0	1	
+0.2       	0.8       	
+
+Attribute exercicio26
+0	1	
+0.04      	0.96      	
+
+Attribute exercicio27
+0	1	
+0.16      	0.84      	
+
+Attribute exercicio28
+0	1	
+0.12      	0.88      	
+
+Attribute exercicio29
+0	1	
+0.08      	0.92      	
+
+Attribute exercicio30
+0	
+1         	
+
+Attribute exercicio31
+0	1	
+0.04      	0.96      	
+
+Attribute exercicio32
+0	1	
+0.12      	0.88      	
+
+Attribute exercicio33
+0	1	
+0.12      	0.88      	
+
+Attribute exercicio34
+0	1	
+0.08      	0.92      	
+
+Attribute exercicio35
+0	1	
+0.08      	0.92      	
+
+Attribute exercicio36
+0	1	
+0.04      	0.96      	
+
+Attribute exercicio37
+0	1	
+0.12      	0.88      	
+
+Attribute exercicio38
+0	1	
+0.08      	0.92      	
+
+Attribute exercicio39
+0	1	
+0.12      	0.88      	
+
+Attribute exercicio40
+0	1	
+0.28      	0.72      	
+
+Attribute exercicio41
+0	1	
+0.4       	0.6       	
+
+Attribute exercicio42
+0	1	
+0.44      	0.56      	
+
+Attribute exercicio43
+0	
+1         	
+
+Attribute exercicio44
+0	1	
+0.2       	0.8       	
+
+Attribute exercicio45
+0	1	
+0.2       	0.8       	
+
+Attribute exercicio46
+0	1	
+0.32      	0.68      	
+
+Attribute exercicio47
+0	1	
+0.16      	0.84      	
+
+Attribute exercicio48
+0	1	
+0.16      	0.84      	
+
+Attribute exercicio49
+0	1	
+0.2       	0.8       	
+
+Attribute exercicio50
+0	1	
+0.28      	0.72      	
+
+Attribute exercicio51
+0	1	
+0.12      	0.88      	
+
+Attribute exercicio52
+0	1	
+0.12      	0.88      	
+
+Attribute exercicio53
+0	1	
+0.24      	0.76      	
+
+Attribute exercicio54
+0	1	
+0.08      	0.92      	
+
+Attribute exercicio55
+0	1	
+0.28      	0.72      	
+
+Attribute exercicio56
+0	1	
+0.36      	0.64      	
+
+Attribute exercicio57
+0	1	
+0.28      	0.72      	
+
+Attribute exercicio58
+0	1	
+0.2       	0.8       	
+
+Attribute exercicio59
+0	1	
+0.16      	0.84      	
+
+Attribute exercicio60
+0	1	
+0.24      	0.76      	
+
+Attribute exercicio61
+0	1	
+0.12      	0.88      	
+
+Attribute exercicio62
+0	1	
+0.16      	0.84      	
+
+Attribute exercicio63
+0	1	
+0.16      	0.84      	
+
+Attribute exercicio64
+0	1	
+0.12      	0.88      	
+
+Attribute exercicio65
+0	
+1         	
+
+Attribute exercicio66
+0	1	
+0.16      	0.84      	
+
+Attribute exercicio67
+0	1	
+0.16      	0.84      	
+
+Attribute exercicio68
+0	1	
+0.16      	0.84      	
+
+Attribute exercicio69
+0	1	
+0.12      	0.88      	
+
+Attribute exercicio70
+0	1	
+0.08      	0.92      	
+
+Attribute exercicio71
+0	1	
+0.6       	0.4       	
+
+Attribute exercicio72
+0	1	
+0.2       	0.8       	
+
+Attribute exercicio73
+0	1	
+0.4       	0.6       	
+
+Attribute exercicio74
+0	1	
+0.16      	0.84      	
+
+Attribute exercicio75
+0	1	
+0.16      	0.84      	
+
+Attribute exercicio76
+0	1	
+0.24      	0.76      	
+
+Attribute exercicio77
+0	1	
+0.24      	0.76      	
+
+Attribute exercicio78
+0	1	
+0.32      	0.68      	
+
+Attribute exercicio79
+0	1	
+0.68      	0.32      	
+
+Attribute exercicio80
+0	1	
+0.4       	0.6       	
+
+Attribute exercicio81
+0	1	
+0.28      	0.72      	
+
+Attribute exercicio82
+0	1	
+0.32      	0.68      	
+
+Attribute exercicio83
+0	1	
+0.6       	0.4       	
+
+Attribute exercicio84
+0	1	
+0.68      	0.32      	
+
+Attribute exercicio85
+0	1	
+0.52      	0.48      	
+
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances          48               31.1688 %
+Incorrectly Classified Instances       106               68.8312 %
+Kappa statistic                          0.0344
+Mean absolute error                      0.3462
+Root mean squared error                  0.519 
+Relative absolute error                 99.5475 %
+Root relative squared error            124.5744 %
+Total Number of Instances              154     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.278     0.287      0.114     0.278     0.161      0.592    questao1
+                 0.358     0.426      0.306     0.358     0.33       0.464    questao2
+                 0.4       0.213      0.545     0.4       0.462      0.604    questao3
+                 0         0.031      0         0         0          0.416    questao4
+Weighted Avg.    0.312     0.267      0.331     0.312     0.312      0.526
+
+=== Confusion Matrix ===
+
+  a  b  c  d   <-- classified as
+  5 11  2  0 |  a = questao1
+ 16 19 14  4 |  b = questao2
+ 16 20 24  0 |  c = questao3
+  7 12  4  0 |  d = questao4
+

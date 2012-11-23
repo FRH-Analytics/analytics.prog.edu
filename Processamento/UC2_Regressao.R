@@ -42,6 +42,16 @@ prova.exercicio.um = merge(dados.prova.um, dados.exercicios.um)
 prova.exercicio.dois = merge(dados.prova.dois, dados.exercicios.dois)
 prova.exercicio.tres = merge(dados.prova.tres, dados.exercicios.tres)
 
+correlacao.prova.um = cor.test(prova.exercicio.um$nota, prova.exercicio.um$numero.submissoes, method="spearman")
+correlacao.prova.dois = cor.test(prova.exercicio.dois$nota, prova.exercicio.dois$numero.submissoes, method="spearman")
+correlacao.prova.tres = cor.test(prova.exercicio.tres$nota, prova.exercicio.tres$numero.submissoes, method="spearman")
+
+correlacoes = data.frame(correlacao.prova.um=c(correlacao.prova.um$estimate),
+                         correlacao.prova.dois=c(correlacao.prova.dois$estimate),
+                         correlacao.prova.tres=c(correlacao.prova.tres$estimate))
+
+write.csv(correlacoes, "correlacoes.csv", quote=F, row.names=F, col.names=F)
+
 write.csv(prova.exercicio.um[, c("nota", "numero.submissoes")], "UC2-Prova1.csv", quote=F, row.names=F, col.names=F)
 write.csv(prova.exercicio.dois[, c("nota", "numero.submissoes")], "UC2-Prova2.csv", quote=F, row.names=F, col.names=F)
 write.csv(prova.exercicio.tres[, c("nota", "numero.submissoes")], "UC2-Prova3.csv", quote=F, row.names=F, col.names=F)

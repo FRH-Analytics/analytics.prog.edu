@@ -1,0 +1,38 @@
+package gui;
+
+import processing.core.PApplet;
+import processing.core.PVector;
+
+public class Botao {
+	
+	private int x, y, width, height;
+	private String label;
+	
+	public Botao(String label, int x, int y, int width, int height) {
+		this.x = x;
+		this.y = y;
+		this.width= width;
+		this.height = height;
+		
+		this.label = label;
+	}
+	
+	public void draw(PApplet p) {
+		parent.noStroke();
+		parent.fill(240);
+		parent.rect(345,145,555,110);
+		parent.rect(580,145,775,110);
+		parent.fill(250);
+		parent.rect(345,140,550,110);
+		parent.rect(580,140,770,110);
+
+		parent.fill(130);
+		parent.text("Opção 1",420,130);
+		parent.text("Opção 2",655,130);
+	}
+	
+	public boolean foiClicado(PApplet p) {
+		PVector mouse = new PVector(p.mouseX, p.mouseY);
+		return mouse.x > x && mouse.y > y && mouse.x < x + width && mouse.y < y + height;
+	}
+}

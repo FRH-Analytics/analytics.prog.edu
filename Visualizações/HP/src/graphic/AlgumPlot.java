@@ -131,13 +131,13 @@ public class AlgumPlot {
 				parent.stroke(cor);
 				parent.rect(startAtX + squareSpace + j * squareSpace, startAtY + (i + 1) * squareSpace, squareSpace, squareSpace);
 				
-				if (cor > 127)
-					cor = 0;
-				else
-					cor = 255;
-				
-				parent.fill(cor);
-				parent.text("" + data[3 - i][j][QTD], startAtX + squareSpace + j * squareSpace, startAtY + (i + 1) * squareSpace + squareSpace);
+//				if (cor > 127)
+//					cor = 0;
+//				else
+//					cor = 255;
+//				
+//				parent.fill(cor);
+//				parent.text("" + data[3 - i][j][QTD], startAtX + squareSpace + j * squareSpace, startAtY + (i + 1) * squareSpace + squareSpace);
 			}
 		}		
 	}

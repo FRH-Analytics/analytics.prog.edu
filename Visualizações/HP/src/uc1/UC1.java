@@ -63,7 +63,11 @@ public class UC1 extends PApplet {
 		qtd.add(new ArrayList<Integer>());
 		qtd.add(new ArrayList<Integer>());
 		
-		String lines[][] = loadCSV("UC1-Prova1.csv");
+		String[][] lines;
+//		String[][] lines = loadCSV("UC1-Prova1.csv");
+		lines = loadCSV("UC1_Bayes_Prova1_Formatado.txt");
+//		lines = loadCSV("UC1_Frequencias_Prova1.csv");
+		
 		
 		for (int i = 1; i < lines.length; i++) {
 			int length = lines[i].length;
@@ -74,10 +78,12 @@ public class UC1 extends PApplet {
 			
 			questoesProva.get(0).add(tmp[0]);
 			questoesExercicios.get(0).add(tmp[1]);
-			qtd.get(0).add((int) tmp[2]);
+			qtd.get(0).add((int) ((float) tmp[2] * 100) );
 		}
 		
-		lines = loadCSV("UC1-Prova2.csv");
+//		lines = loadCSV("UC1-Prova2.csv");
+		lines = loadCSV("UC1_Bayes_Prova2_Formatado.txt");
+//		lines = loadCSV("UC1_Frequencias_Prova2.csv");
 		
 		for (int i = 1; i < lines.length; i++) {
 			int length = lines[i].length;
@@ -88,10 +94,13 @@ public class UC1 extends PApplet {
 			
 			questoesProva.get(1).add(tmp[0]);
 			questoesExercicios.get(1).add(tmp[1]);
-			qtd.get(1).add((int) tmp[2]);
+//			qtd.get(1).add((int) tmp[2]);
+			qtd.get(1).add((int) ((float) tmp[2] * 100) );
 		}
 		
-		lines = loadCSV("UC1-Prova3.csv");
+//		lines = loadCSV("UC1-Prova3.csv");
+		lines = loadCSV("UC1_Bayes_Prova3_Formatado.txt");
+//		lines = loadCSV("UC1_Frequencias_Prova3.csv");
 		
 		for (int i = 1; i < lines.length; i++) {
 			int length = lines[i].length;
@@ -102,7 +111,8 @@ public class UC1 extends PApplet {
 			
 			questoesProva.get(2).add(tmp[0]);
 			questoesExercicios.get(2).add(tmp[1]);
-			qtd.get(2).add((int) tmp[2]);
+//			qtd.get(2).add((int) tmp[2]);
+			qtd.get(2).add((int) ((float) tmp[2] * 100) );
 		}
 		
 //		String lines[][] = loadCSV("UC1.csv");

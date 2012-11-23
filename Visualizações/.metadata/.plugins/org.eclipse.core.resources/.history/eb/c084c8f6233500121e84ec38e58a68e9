@@ -1,0 +1,43 @@
+package lat;
+
+import processing.core.PApplet;
+import uc.UC4;
+
+public class LAT extends PApplet {
+	
+	private int rectSize = 90;
+	
+	private UC4 uc4;
+	
+	@Override
+	public void setup() {
+		size(1200,600);
+	}
+	
+	public void draw() {
+		  background(255);
+		  fill(245,245,245);
+		  rectMode(CORNERS);
+		  stroke(245,245,245);
+		  rect(0, 0, width, rectSize);
+		  
+		  //Definindo os retangulos das opcoes
+		  
+		  fill(240,240,240);
+		  rect(115,70,320,28);
+		  rect(340,70,555,28);
+		  rect(580,70,775,28);
+		  rect(810,70,1020,28);
+		  
+		  rect(115,65,315,29);
+		  rect(340,65,550,29);
+		  rect(580,65,770,29);
+		  rect(810,65,1015,29);
+		  
+		  fill(130,130,130);
+		  text("Exercícios relevantes",155,50);
+		  text("Correlação Exercícios e Notas",350,50);
+		  text("Agrupamento",630,50);
+		  text("Composição das Notas",850,50);
+	  }
+}

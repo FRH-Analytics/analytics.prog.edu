@@ -1,0 +1,61 @@
+package uc;
+
+import gui.Bubble2;
+import gui.GraphicUC;
+import processing.core.PApplet;
+import processing.core.PImage;
+
+public class UC3 implements GraphicUC {
+	
+	private PApplet parent;
+	
+	private Bubble2[] bubbles = new Bubble2[57];
+	private PImage bg;
+	private int r = 4;
+	
+	public UC3(PApplet p) {
+		this.parent = p;
+	}
+
+	@Override
+	public void draw(int click) {
+		if(opcao){
+			parent.image(parent.loadImage("uc3.1.png"),0,100);
+			generateValues();
+			  // display bubbles
+			  for (int i = 1; i < bubbles.length; i++) {
+				  bubbles[i].display(bubbles[i].c1, bubbles[i].c2, bubbles[i].c3);
+			  }
+			   
+			  // display labels
+			  for (int i = 1; i < bubbles.length; i++) {
+					  bubbles[i].displayLabel("Ativi.:");  			    
+			  }
+		}else{
+			parent.image(parent.loadImage("uc3.2.png"), 0, 100);
+			generateValues2();
+			  // display bubbles
+			  for (int i = 1; i < bubbles.length; i++) {
+			  //  bubbles[i].display();
+				  bubbles[i].display(bubbles[i].c1, bubbles[i].c2, bubbles[i].c3);
+			  }
+			   
+			  // display labels
+			  for (int i = 1; i < bubbles.length; i++) {
+				  bubbles[i].displayLabel("Quant.:");
+			  }
+		}
+		
+		parent.noStroke();
+		parent.fill(240);
+		parent.rect(345,145,555,110);
+		parent.rect(580,145,775,110);
+		parent.fill(250);
+		parent.rect(345,140,550,110);
+		parent.rect(580,140,770,110);
+
+		parent.fill(130);
+		parent.text("Atividade",420,130);
+		parent.text("Quantidade de exercícios",600,130);
+	}
+}

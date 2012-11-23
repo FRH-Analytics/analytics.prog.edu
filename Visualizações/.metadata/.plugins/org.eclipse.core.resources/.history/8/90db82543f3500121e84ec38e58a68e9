@@ -1,0 +1,12 @@
+package gui;
+
+public abstract GraphicUC {
+	
+	public abstract void draw(int click);
+	
+	public abstract void mousePressed();
+	
+	protected boolean overRect(int x, int y, int width, int height)  {
+	  return (mouseX >= x && mouseX <= x+width && mouseY >= y && mouseY <= y+height);
+	}
+}

@@ -1,0 +1,314 @@
+package uc;
+
+import gui.AlgumPlot;
+import gui.Botao;
+import gui.GraphicUC;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import processing.core.PApplet;
+import processing.core.PImage;
+
+public class UC1 extends GraphicUC {
+	
+	private PImage bg,grid;
+	private int gx = 16;
+	
+	private List<Botao> botoes;
+	
+	private List<AlgumPlot> algumPlot;
+	private List<List<AlgumPlot>> algumPlot2;
+	
+	private List<List<Float>> questoesProva;
+	private List<List<Float>> questoesExercicios;
+	private List<List<Integer>> qtd;
+	
+	private List<List<Float>> questoesProvaProbabilidade;
+	private List<List<Float>> questoesExerciciosProbabilidade;
+	private List<List<Integer>> probabilidade;
+	
+	private int prova_atual = 0;
+	private int plot_atual = 0;
+	
+	private int click = 0;
+	
+	public UC1(PApplet p){
+		super(p);
+		initAll();
+	}
+
+	@Override
+	public void draw(int c) {
+		this.bg = parent.loadImage("bg_uc1.png");
+		this.grid = parent.loadImage("grid.png");
+		updategrid(this.click);
+		
+//		algumPlot.get(prova_atual).drawSquaresAt(this.click, 5, 130, 160, 75, 78);
+		algumPlot2.get(plot_atual).get(prova_atual).drawSquaresAt(this.click, 5, 130, 160, 75, 78);
+//		parent.textSize(13);
+		
+		hover();
+		
+		for (Botao b : botoes)
+			b.draw(parent);
+	}
+	
+	public void updategrid(int click){
+		if(click != 0){
+			parent.image(bg,0,100);
+			parent.image(grid,gx + (click*14),506);
+		}else{
+			parent.image(bg,0,100);
+			parent.image(grid,gx,506);
+		}
+	}
+	
+	private String[][] loadCSV(String filename){
+		String lines[] = parent.loadStrings(filename);
+		String [][] csv;
+		int csvWidth=0;
+
+		//calculate max width of csv file
+		for (int i=0; i < lines.length; i++) {
+		  String [] chars = PApplet.split(lines[i],',');
+		  if (chars.length>csvWidth){
+		    csvWidth=chars.length;
+		  }
+		}
+
+		//create csv array based on # of rows and columns in csv file
+		csv = new String [lines.length][csvWidth];
+
+		//parse values into 2d array
+		for (int i=0; i < lines.length; i++) {
+		  String [] temp = new String [lines.length];
+		  temp = PApplet.split(lines[i], ',');
+		  for (int j=0; j < temp.length; j++){
+		   csv[i][j]=temp[j];
+		  }
+		}
+		
+		return csv;
+	}
+	
+	private void loadData() {
+		questoesProva = new ArrayList<List<Float>>();
+		questoesProva.add(new ArrayList<Float>());
+		questoesProva.add(new ArrayList<Float>());
+		questoesProva.add(new ArrayList<Float>());
+		
+		questoesExercicios = new ArrayList<List<Float>>();
+		questoesExercicios.add(new ArrayList<Float>());
+		questoesExercicios.add(new ArrayList<Float>());
+		questoesExercicios.add(new ArrayList<Float>());
+		
+		qtd = new ArrayList<List<Integer>>();
+		qtd.add(new ArrayList<Integer>());
+		qtd.add(new ArrayList<Integer>());
+		qtd.add(new ArrayList<Integer>());
+		
+		String lines[][] = loadCSV("UC1_Frequencias_Prova1.csv");
+		
+		for (int i = 1; i < lines.length; i++) {
+			int length = lines[i].length;
+			float[] tmp = new float[length];
+			
+			for (int j = 0; j < length; j++)
+				tmp[j] = Float.valueOf(lines[i][j].trim());
+			
+			questoesProva.get(0).add(tmp[0]);
+			questoesExercicios.get(0).add(tmp[1]);
+			qtd.get(0).add((int) tmp[2]);
+		}
+		
+		lines = loadCSV("UC1_Frequencias_Prova2.csv");
+		
+		for (int i = 1; i < lines.length; i++) {
+			int length = lines[i].length;
+			float[] tmp = new float[length];
+			
+			for (int j = 0; j < length; j++)
+				tmp[j] = Float.valueOf(lines[i][j].trim());
+			
+			questoesProva.get(1).add(tmp[0]);
+			questoesExercicios.get(1).add(tmp[1]);
+			qtd.get(1).add((int) tmp[2]);
+		}
+		
+		lines = loadCSV("UC1_Frequencias_Prova3.csv");
+		
+		for (int i = 1; i < lines.length; i++) {
+			int length = lines[i].length;
+			float[] tmp = new float[length];
+			
+			for (int j = 0; j < length; j++)
+				tmp[j] = Float.valueOf(lines[i][j].trim());
+			
+			questoesProva.get(2).add(tmp[0]);
+			questoesExercicios.get(2).add(tmp[1]);
+			qtd.get(2).add((int) tmp[2]);
+		}
+		
+		
+		
+		
+		questoesProvaProbabilidade = new ArrayList<List<Float>>();
+		questoesProvaProbabilidade.add(new ArrayList<Float>());
+		questoesProvaProbabilidade.add(new ArrayList<Float>());
+		questoesProvaProbabilidade.add(new ArrayList<Float>());
+		
+		questoesExerciciosProbabilidade = new ArrayList<List<Float>>();
+		questoesExerciciosProbabilidade.add(new ArrayList<Float>());
+		questoesExerciciosProbabilidade.add(new ArrayList<Float>());
+		questoesExerciciosProbabilidade.add(new ArrayList<Float>());
+		
+		probabilidade = new ArrayList<List<Integer>>();
+		probabilidade.add(new ArrayList<Integer>());
+		probabilidade.add(new ArrayList<Integer>());
+		probabilidade.add(new ArrayList<Integer>());
+		
+		lines = loadCSV("UC1_Bayes_Prova1_Formatado.txt");
+		
+		for (int i = 1; i < lines.length; i++) {
+			int length = lines[i].length;
+			float[] tmp = new float[length];
+			
+			for (int j = 0; j < length; j++)
+				tmp[j] = Float.valueOf(lines[i][j].trim());
+			
+			questoesProvaProbabilidade.get(0).add(tmp[0]);
+			questoesExerciciosProbabilidade.get(0).add(tmp[1]);
+			probabilidade.get(0).add( (int) (((float) tmp[2]) * 100) );
+		}
+		
+		lines = loadCSV("UC1_Bayes_Prova2_Formatado.txt");
+		
+		for (int i = 1; i < lines.length; i++) {
+			int length = lines[i].length;
+			float[] tmp = new float[length];
+			
+			for (int j = 0; j < length; j++)
+				tmp[j] = Float.valueOf(lines[i][j].trim());
+			
+			questoesProvaProbabilidade.get(1).add(tmp[0]);
+			questoesExerciciosProbabilidade.get(1).add(tmp[1]);
+			probabilidade.get(1).add( (int) (((float) tmp[2]) * 100) );
+		}
+		
+		lines = loadCSV("UC1_Bayes_Prova3_Formatado.txt");
+		
+		for (int i = 1; i < lines.length; i++) {
+			int length = lines[i].length;
+			float[] tmp = new float[length];
+			
+			for (int j = 0; j < length; j++)
+				tmp[j] = Float.valueOf(lines[i][j].trim());
+			
+			questoesProvaProbabilidade.get(2).add(tmp[0]);
+			questoesExerciciosProbabilidade.get(2).add(tmp[1]);
+			probabilidade.get(2).add( (int) (((float) tmp[2]) * 100) );
+		}
+	}
+	
+	private int[] toFloat(List<Float> list) {
+		int[] tmp = new int[list.size()];
+		
+		for (int i = 0; i < list.size(); i++)
+			tmp[i] = Math.round(list.get(i));
+		
+		return tmp;
+	}
+	
+	private int[] toInt(List<Integer> list) {
+		int[] tmp = new int[list.size()];
+		
+		for (int i = 0; i < list.size(); i++)
+			tmp[i] = list.get(i);
+		
+		return tmp;
+	}
+	
+	private int max(List<Float> lista) {
+		float max = lista.get(0);
+		
+		for (Float float1 : lista)
+			if (float1 > max)
+				max = float1;
+		
+		return (int) max;
+	}
+	
+	private AlgumPlot loadAlgumPlot(List<Float> prova, List<Float> exercicio, List<Integer> qtds, boolean probabilidade) {
+		AlgumPlot plot = new AlgumPlot(parent, max(prova), max(exercicio), 14, probabilidade);
+		plot.setData(toFloat(prova), toFloat(exercicio), toInt(qtds));
+		plot.eixoX = "Questão da Exercício";
+		plot.eixoY = "Questão do Prova";
+		plot.eixoZ = "Quantidade de Alunos";
+		plot.titulo = "Influencia das questões dos exercicios em relação às questões da prova";
+		
+		return plot;
+	}
+	
+	private void initAll() {
+		loadData();
+		
+		System.out.println(questoesProvaProbabilidade);
+		System.out.println(questoesExerciciosProbabilidade);
+		System.out.println(probabilidade);
+		
+		algumPlot = new ArrayList<AlgumPlot>();
+		algumPlot.add(loadAlgumPlot(questoesProva.get(0), questoesExercicios.get(0), qtd.get(0), false));
+		algumPlot.add(loadAlgumPlot(questoesProva.get(1), questoesExercicios.get(1), qtd.get(1), false));
+		algumPlot.add(loadAlgumPlot(questoesProva.get(2), questoesExercicios.get(2), qtd.get(2), false));
+		
+		algumPlot2 = new ArrayList<List<AlgumPlot>>();
+		List<AlgumPlot> tmp1 = new ArrayList<AlgumPlot>();
+		tmp1.add(loadAlgumPlot(questoesProva.get(0), questoesExercicios.get(0), qtd.get(0), false));
+		tmp1.add(loadAlgumPlot(questoesProva.get(1), questoesExercicios.get(1), qtd.get(1), false));
+		tmp1.add(loadAlgumPlot(questoesProva.get(2), questoesExercicios.get(2), qtd.get(2), false));
+		
+		List<AlgumPlot> tmp2 = new ArrayList<AlgumPlot>();
+		tmp2.add(loadAlgumPlot(questoesProvaProbabilidade.get(0), questoesExerciciosProbabilidade.get(0), probabilidade.get(0), true));
+		tmp2.add(loadAlgumPlot(questoesProvaProbabilidade.get(1), questoesExerciciosProbabilidade.get(1), probabilidade.get(1), true));
+		tmp2.add(loadAlgumPlot(questoesProvaProbabilidade.get(2), questoesExerciciosProbabilidade.get(2), probabilidade.get(2), true));
+		
+		algumPlot2.add(tmp1);
+		algumPlot2.add(tmp2);
+		
+		botoes = new ArrayList<Botao>();
+		botoes.add(new Botao("Frequencia", 115, 110, 210, 35));
+		botoes.add(new Botao("Probabilidade", 345, 110, 210, 35));
+//		botoes.add(new Botao("Opção 2", 580, 110, 195, 35));
+		botoes.add(new Botao("Prova 1", 815, 110, 210, 35));
+		botoes.add(new Botao("Prova 2", 815, 210, 210, 35));
+		botoes.add(new Botao("Prova 3", 815, 310, 210, 35));
+		
+		parent.rect(505, 260, 505 + 70, 101 + 260);
+	}
+	private void hover() {
+//		algumPlot.get(menu.selected).hover();
+	}
+
+	@Override
+	public void mousePressed() {
+		if (botoes.get(2).isHover(parent)) {
+			click = 0;
+			prova_atual = 0;
+		} else if (botoes.get(3).isHover(parent)) {
+			click = 0;
+			prova_atual = 1;
+		} if (botoes.get(4).isHover(parent)) {
+			click = 0;
+			prova_atual = 2;
+		}
+		
+		if (overRect(505,260,70,101)) {
+//			if (click < algumPlot.get(prova_atual).data[0].length - 5) click += 1;
+			if (click < algumPlot2.get(plot_atual).get(prova_atual).data[0].length - 5) click += 1;
+		} else if (overRect(61,260,70,101)) {
+			if (click >= 1) click -= 1;
+		}
+	}
+	
+}

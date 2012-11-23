@@ -1,0 +1,112 @@
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
+import processing.core.*;
+
+public class GraphUC4{
+	
+	PImage bg,grid;
+	Bar[] bars = new Bar[58];
+	PApplet parent;
+	int gx = 63;
+	Bar b1,b2,b3,b4,b5;
+	
+	public GraphUC4(PApplet p){
+		parent = p;
+		this.bg = parent.loadImage("bg_uc4.png");
+		this.grid = parent.loadImage("grid2.png");
+		generateValues();
+	}
+
+	public void draw(int click){
+		updategrid(click);
+		showbars(click);
+		
+		
+	}
+	
+	//Bar(String id, float mtt, float mtp, float ex, float prova, int i)
+	public void generateValues() {
+		  String[] data = parent.loadStrings("uc4.csv");
+		  for (int i = 1; i < 58; i++) {
+		    String[] temp= parent.split(data[i],",");
+		    String id = temp[1];
+		    float mtt = Float.parseFloat(temp[2]);
+		    float mtp =  Float.parseFloat(temp[3]);
+		    float ex = Float.parseFloat(temp[4]);
+		    float prova =  Float.parseFloat(temp[5]);
+		    float nota_final =  Float.parseFloat(temp[6]);
+		    bars[i] = new Bar(id,mtt,mtp,ex,prova, i,nota_final);
+		  }
+	}
+	
+	public Bar getBar(int i){
+		return bars[i];
+	}
+	
+	public void updategrid(int click){
+		if(click != 0){
+			parent.image(bg,0,100);
+			parent.image(grid,gx + (click*19),481);
+		}else{
+			parent.image(bg,0,100);
+			parent.image(grid,gx,481);
+		}
+	 }
+	  
+	  public void showbars(int click){
+			b1 = getBar(click + 1);
+			b2 = getBar(click + 2);
+			b3 = getBar(click + 3);
+			b4 = getBar(click + 4);
+			b5 = getBar(click + 5);
+			NumberFormat formatter = new DecimalFormat("#0.0");
+			parent.noStroke();
+			
+			//barra mtt = nota total
+			parent.fill(189,201,225);//mtt
+			
+			parent.rect(195,440,115,476 - (b1.nota)*35);
+			parent.rect(290,440,210,476 - (b2.nota)*35);
+			parent.rect(384,440,304,476 - (b3.nota)*35);
+			parent.rect(480,440,400,476 - (b4.nota)*35);
+			parent.rect(575,440,495,476 - (b5.nota)*35);
+			
+			//barra mtp = nota - mtt
+			parent.fill(103,169,207);//mtp
+			parent.rect(195,440,115,467 - (b1.nota - b1.mtt)*35);
+			parent.rect(290,440,210,467 - (b2.nota - b2.mtt)*35);
+			parent.rect(384,440,304,467 - (b3.nota - b3.mtt)*35);
+			parent.rect(480,440,400,467 - (b4.nota - b4.mtt)*35);
+			parent.rect(575,440,495,467 - (b5.nota - b5.mtt)*35);
+			
+			//barra provas = nota - (mtt + mtp)
+			parent.fill(28,144,153);//provas
+			parent.rect(195,440,115,460 - (b1.ex + b1.prova)*35);
+			parent.rect(290,440,210,460 - (b2.ex + b2.prova)*35);
+			parent.rect(384,440,304,460 - (b3.ex + b3.prova)*35);
+			parent.rect(480,440,400,460 - (b4.ex + b4.prova)*35);
+			parent.rect(575,440,495,460 - (b5.ex + b5.prova)*35);
+			
+			//barra exercicios
+			parent.fill(1,108,89);
+			parent.rect(195,440,115,445 - (b1.ex)*35);
+			parent.rect(290,440,210,445 - (b2.ex)*35);
+			parent.rect(384,440,304,445 - (b3.ex)*35);
+			parent.rect(480,440,400,445 - (b4.ex)*35);
+			parent.rect(575,440,495,445 - (b5.ex)*35);
+			
+			parent.fill(130,130,130);
+			parent.text(b1.id,120,460);
+			parent.text(formatter.format(b1.nota),140,(465 - (b1.nota)*35));
+			parent.text(b2.id,212,460);
+			parent.text(formatter.format(b2.nota),232,(465 - (b2.nota)*35));
+			parent.text(b3.id,308,460);
+			parent.text(formatter.format(b3.nota),328,(465 - (b3.nota)*35));
+			parent.text(b4.id,404,460);
+			parent.text(formatter.format(b4.nota),424,(465 - (b4.nota)*35));
+			parent.text(b5.id,500,460);
+			parent.text(formatter.format(b5.nota),520,(465 - (b5.nota)*35));
+		  
+		  }
+}

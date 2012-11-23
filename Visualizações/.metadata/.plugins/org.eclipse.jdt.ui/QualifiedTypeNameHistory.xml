@@ -1,2 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+<fullyQualifiedTypeName name="weka.core.Instance"/>
+<fullyQualifiedTypeName name="uc1.bayes.Bayes"/>
+<fullyQualifiedTypeName name="uc.UC4"/>
+<fullyQualifiedTypeName name="gui.Menu"/>
+<fullyQualifiedTypeName name="gui.GraphicUC"/>
+<fullyQualifiedTypeName name="javax.xml.bind.annotation.adapters.CollapsedStringAdapter"/>
+<fullyQualifiedTypeName name="gui.Column"/>
+<fullyQualifiedTypeName name="processing.core.PApplet"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="gui.Botao"/>
+<fullyQualifiedTypeName name="gui.AlgumPlot"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="processing.core.PImage"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+</qualifiedTypeNameHistroy>

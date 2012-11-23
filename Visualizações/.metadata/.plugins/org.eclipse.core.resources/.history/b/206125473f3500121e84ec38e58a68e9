@@ -1,0 +1,8 @@
+package gui;
+
+public interface GraphicUC {
+	
+	public void draw(int click);
+	
+	public void mousePressed();
+}

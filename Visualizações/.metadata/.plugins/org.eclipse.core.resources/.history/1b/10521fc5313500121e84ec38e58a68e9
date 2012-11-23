@@ -1,0 +1,197 @@
+package uc;
+
+import gui.GraphicUC;
+import gui.Menu;
+import gui.ScatterPlot;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.gicentre.utils.stat.XYChart;
+
+import processing.core.PApplet;
+
+public class UC2 implements GraphicUC {
+	
+	private PApplet parent;
+	
+	private List<ScatterPlot> scatterPlot;
+	
+	private List<List<Float>> dadosNotas;
+	private List<List<Float>> dadosExercicios;
+	private List<Float> correlacao;
+
+	public UC2(PApplet p) {
+		this.parent = p;
+		
+		initAll();
+	}
+
+	@Override
+	public void draw(int click) {
+		scatterPlot.get(click).getScatterPlot().draw(10, 160, 1150, 380);
+		
+		parent.noStroke();
+		parent.fill(240);
+		parent.rect(345,145,555,110);
+		parent.rect(580,145,775,110);
+		parent.rect(815,145,1025,110);
+		parent.fill(250);
+		parent.rect(345,140,550,110);
+		parent.rect(580,140,770,110);
+		parent.rect(815,140,1020,110);
+
+		parent.fill(130);
+		parent.text("Prova 1",420,130);
+		parent.text("Prova 2",655,130);
+		parent.text("Prova 3",890,130);
+		
+		parent.fill(0);
+		parent.text("Visualização da Prova " + (click + 1), 100, 130);
+		parent.text("VALOR ILUSTRATIVO - MUDAR ISSO!!!!!!!! Valor da correlação em relação à Prova " + (click + 1) + ": " + correlacao.get(click), 100, 570);
+		parent.fill(130);
+	}
+	
+	private String[][] loadCSV(String filename){
+		String lines[] = parent.loadStrings(filename);
+		String [][] csv;
+		int csvWidth=0;
+
+		//calculate max width of csv file
+		for (int i=0; i < lines.length; i++) {
+		  String [] chars = PApplet.split(lines[i],',');
+		  if (chars.length>csvWidth){
+		    csvWidth=chars.length;
+		  }
+		}
+
+		//create csv array based on # of rows and columns in csv file
+		csv = new String [lines.length][csvWidth];
+
+		//parse values into 2d array
+		for (int i=0; i < lines.length; i++) {
+		  String [] temp = new String [lines.length];
+		  temp = PApplet.split(lines[i], ',');
+		  for (int j=0; j < temp.length; j++){
+		   csv[i][j]=temp[j];
+		  }
+		}
+		
+		return csv;
+	}
+	
+	private void loadData() {
+		dadosNotas = new ArrayList<List<Float>>();
+		dadosNotas.add(new ArrayList<Float>());
+		dadosNotas.add(new ArrayList<Float>());
+		dadosNotas.add(new ArrayList<Float>());
+		
+		dadosExercicios = new ArrayList<List<Float>>();
+		dadosExercicios.add(new ArrayList<Float>());
+		dadosExercicios.add(new ArrayList<Float>());
+		dadosExercicios.add(new ArrayList<Float>());
+		
+		correlacao = new ArrayList<Float>();
+		
+		String[][] lines = loadCSV("correlacoes.csv");
+		for (int i = 1; i < lines.length; i++) {
+			int length = lines[1].length;
+			float[] tmp = new float[length];
+			
+			for (int j = 0; j < length; j++)
+				tmp[j] = Float.valueOf(lines[1][j].trim());
+			
+			correlacao.add(tmp[0]);
+			correlacao.add(tmp[1]);
+			correlacao.add(tmp[2]);
+		}
+		
+		lines = loadCSV("UC2-Prova1.csv");
+		for (int i = 1; i < lines.length; i++) {
+			int length = lines[i].length;
+			float[] tmp = new float[length];
+			
+			for (int j = 0; j < length; j++)
+				tmp[j] = Float.valueOf(lines[i][j].trim());
+			
+			dadosNotas.get(0).add(tmp[0]);
+			dadosExercicios.get(0).add(tmp[1]);
+		}
+		
+		lines = loadCSV("UC2-Prova2.csv");
+		
+		for (int i = 1; i < lines.length; i++) {
+			int length = lines[i].length;
+			float[] tmp = new float[length];
+			
+			for (int j = 0; j < length; j++)
+				tmp[j] = Float.valueOf(lines[i][j].trim());
+			
+			dadosNotas.get(1).add(tmp[0]);
+			dadosExercicios.get(1).add(tmp[1]);
+		}
+		
+		lines = loadCSV("UC2-Prova3.csv");
+		
+		for (int i = 1; i < lines.length; i++) {
+			int length = lines[i].length;
+			float[] tmp = new float[length];
+			
+			for (int j = 0; j < length; j++)
+				tmp[j] = Float.valueOf(lines[i][j].trim());
+			
+			dadosNotas.get(2).add(tmp[0]);
+			dadosExercicios.get(2).add(tmp[1]);
+		}
+	}
+	
+	private float[] toFloat(List<Float> list) {
+		float[] tmp = new float[list.size()];
+		
+		for (int i = 0; i < list.size(); i++)
+			tmp[i] = list.get(i);
+		
+		return tmp;
+	}
+	
+	
+	private float max(List<Float> lista) {
+		float max = lista.get(0);
+		
+		for (Float float1 : lista)
+			if (float1 > max)
+				max = float1;
+		
+		return max;
+	}
+	
+	private ScatterPlot loadScatterPlot(List<Float> notas, List<Float> qtdQuestoes) {
+		XYChart plot = new XYChart(parent);
+		plot.setData(toFloat(qtdQuestoes), toFloat(notas));
+		
+		plot.showXAxis(true);
+		plot.showYAxis(true);
+		
+		plot.setMinX(0);
+		plot.setMinY(0);
+		
+		plot.setMaxX(max(qtdQuestoes));
+		plot.setMaxY(10);
+		
+		plot.setPointSize(5);
+		
+		plot.setXAxisLabel("Quantidade de Exercícios Enviados");
+		plot.setYAxisLabel("Nota na Prova");
+		
+		return new ScatterPlot(plot);
+	}
+	
+	private void initAll() {
+		loadData();
+		
+		scatterPlot = new ArrayList<ScatterPlot>();
+		scatterPlot.add(loadScatterPlot(dadosNotas.get(0), dadosExercicios.get(0)));
+		scatterPlot.add(loadScatterPlot(dadosNotas.get(1), dadosExercicios.get(1)));
+		scatterPlot.add(loadScatterPlot(dadosNotas.get(2), dadosExercicios.get(2)));
+	}
+}
